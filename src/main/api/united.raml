@@ -1,0 +1,29 @@
+#%RAML 1.0
+version: 1.0.0
+title: united
+baseUri: http://localhost:8081/api
+/unitedAll:
+  get:
+    responses:
+      200:
+        description: get the all flights details list
+        body:
+          application/json:
+            example: !include examples/unitedAll.json
+/unitedFlightsByDestination:
+  get:
+    queryParameters:
+      destination:
+        minLength: 3
+        maxLength: 3
+    responses:
+      200:
+        description: One particular destination is available
+        body:
+          application/json:
+           example: !include examples/unitedFlightsByDestination.json
+            
+
+    
+       
+                
